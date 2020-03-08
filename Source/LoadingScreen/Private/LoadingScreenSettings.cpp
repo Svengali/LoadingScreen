@@ -1,5 +1,3 @@
-// Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
-
 #include "LoadingScreenSettings.h"
 #include "Styling/CoreStyle.h"
 #include "Engine/Font.h"
@@ -9,8 +7,8 @@
 
 FLoadingScreenSlotPosition::FLoadingScreenSlotPosition()
 	: Anchors(0.5f)
-	, Offset(NoInit)
-	, Alignment(NoInit)
+	, Offset(FVector::ZeroVector)
+	, Alignment(FVector::ZeroVector)
 { }
 
 FLoadingScreenSlotText::FLoadingScreenSlotText()
@@ -21,8 +19,9 @@ FLoadingScreenSlotText::FLoadingScreenSlotText()
 {
 	if (!IsRunningDedicatedServer())
 	{
-		static ConstructorHelpers::FObjectFinder<UFont> RobotoFontObj(TEXT("/Engine/EngineFonts/Roboto"));
-		Font = FSlateFontInfo(RobotoFontObj.Object, 20, FName("Normal"));;
+		// TODO (break Hot-reload)
+		//static ConstructorHelpers::FObjectFinder<UFont> RobotoFontObj(TEXT("/Engine/EngineFonts/Roboto"));
+		//Font = FSlateFontInfo(RobotoFontObj.Object, 20, FName("Normal"));
 	}
 }
 
@@ -59,6 +58,7 @@ FLoadingScreenDescription::FLoadingScreenDescription()
 	, bAutoCompleteWhenLoadingCompletes(true)
 	, bMoviesAreSkippable(true)
 	, bWaitForManualStop(false)	
+	, PlaybackType(EMoviePlaybackType::MT_Looped)
 	, bShowUiOverlay(true)
 	, bShowUiAfterMovies(true)
 	, Throbber(FLoadingScreenThrobber())

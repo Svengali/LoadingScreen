@@ -1,5 +1,3 @@
-// Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -39,7 +37,7 @@ public:
 	* 1-Y = Bottom Side
 	*/
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Slot Position")
-		FAnchors Anchors;
+	FAnchors Anchors;
 
 	/** The offset for the Widget
 	* -X = Left
@@ -48,7 +46,7 @@ public:
 	* +Y = Down
 	*/
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Slot Position")
-		FVector2D Offset;
+	FVector2D Offset;
 
 	/** Alignment pivot point of the Widget with 0.5 being center of either axis
 	* 0-X = Left Side
@@ -57,7 +55,7 @@ public:
 	* 1-Y = Bottom Side
 	*/
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Slot Position")
-		FVector2D Alignment;
+	FVector2D Alignment;
 
 };
 
@@ -72,23 +70,23 @@ public:
 
 	/** Flag for showing the widget. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Tips")
-		bool bShouldShowText;
+	bool bShouldShowText;
 
 	/** The justification of the text. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Tips")
-		TEnumAsByte<ETextJustify::Type> TextJustification;
+	TEnumAsByte<ETextJustify::Type> TextJustification;
 
 	/** The size of the text before it's wrapped to the next line. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Tips")
-		float WrapAt;
+	float WrapAt;
 
 	/** The color to use for the text */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Loading Screen Text")
-		FSlateColor TextColor;
+	FSlateColor TextColor;
 
 	/** The font to display for text. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Tips")
-		FSlateFontInfo Font;
+	FSlateFontInfo Font;
 };
 
 USTRUCT(BlueprintType)
@@ -102,15 +100,15 @@ public:
 
 	/** Text Information related to the text */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Loading Screen Text")
-		FLoadingScreenSlotText SlotText;
+	FLoadingScreenSlotText SlotText;
 
 	/** The slot position of the text */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Loading Screen Text")
-		FLoadingScreenSlotPosition SlotPosition;
+	FLoadingScreenSlotPosition SlotPosition;
 
 	/** The text to display on the loading screen. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Loading Screen Text", meta = (MultiLine = "true"))
-		FText Text;
+	FText Text;
 
 };
 
@@ -125,23 +123,23 @@ public:
 
 	/** Flag for showing the loading throbber if true, false will not show any throbber. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Throbber")
-		bool bShowThrobber;
+	bool bShowThrobber;
 
 	/** Decides which throbber type to show if true, false will not show any throbber. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Throbber", meta = (EditCondition = "bShowThrobber"))
-		EThrobberLoadingType ThrobberType;
+	EThrobberLoadingType ThrobberType;
 
 	/** Should throbber animate in opposite direction? Works for both regular and circular throbber */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Throbber", meta = (EditCondition = "bShowThrobber"))
-		bool bFlipThrobberAnimation;
+	bool bFlipThrobberAnimation;
 
 	/** The numbers of pieces in the throbber when it is shown */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Throbber", meta = (ClampMin = "1", ClampMax = "25", EditCondition = "bShowThrobber"))
-		int NumPiecesThrobber;
+	int NumPiecesThrobber;
 
 	/** The image for each throbber piece */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Throbber", meta = (EditCondition = "bShowThrobber"))
-		FSlateBrush ThrobberImage;
+	FSlateBrush ThrobberImage;
 
 	/** The slot position of the throbber */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Throbber", meta = (EditCondition = "bShowThrobber"))
@@ -149,31 +147,31 @@ public:
 
 	/** Should the pieces animate horizontally? */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Regular", meta = (EditCondition = "bShowThrobber"))
-		bool AnimateHorizontally;
+	bool AnimateHorizontally;
 
 	/** Should the pieces animate vertically? */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Regular", meta = (EditCondition = "bShowThrobber"))
-		bool AnimateVertically;
+	bool AnimateVertically;
 
 	/** Should the pieces animate their opacity? */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Regular", meta = (EditCondition = "bShowThrobber"))
-		bool AnimateOpacity;
+	bool AnimateOpacity;
 
 	/** The amount of time for a full circle(in seconds) */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Circular", meta = (EditCondition = "bShowThrobber"))
-		float ThrobberPeriod;
+	float ThrobberPeriod;
 
 	/** The radius of the circle */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Circular", meta = (EditCondition = "bShowThrobber"))
-		float ThrobberRadius;
+	float ThrobberRadius;
 
 	/** Image to draw (adjust image size here to adjust the size in X and Y) */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Image", meta = (EditCondition = "bShowThrobber"))
-		FSlateBrush ImageBrush;
+	FSlateBrush ImageBrush;
 
 	/** Color and opacity */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Image", meta = (EditCondition = "bShowThrobber", sRGB = "true"))
-		FLinearColor ImageColorAndOpacity;
+	FLinearColor ImageColorAndOpacity;
 
 };
 
@@ -188,7 +186,7 @@ public:
 
 	/** Text Information related to the tips text */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Tips")
-		FLoadingScreenSlotText SlotText;
+	FLoadingScreenSlotText SlotText;
 
 	/** The slot position of the tips */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Tips")
@@ -196,11 +194,11 @@ public:
 
 	/** The intended time between tips before it automatically switches to a new tip, anything below zero will cause the tips to not change. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Tips", meta = (ClampMin = "0"))
-		int TimeBetweenTips; // Using an integer because letting people be able to get it really low might be bad...
+	int TimeBetweenTips; // Using an integer because letting people be able to get it really low might be bad...
 
 	/** The tips to display on the load screen */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Tips", meta =(MultiLine = "true"))
-		TArray<FText> Tips;
+	TArray<FText> Tips;
 
 };
 
@@ -215,47 +213,47 @@ public:
 
 	/** Flag for showing any ui elements and images if true(incase you only want to show movies and thats it then set this to false) */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Screens|Loading")
-		bool bShowWidget;
+	bool bShowWidget;
 
 	/** The minimum time that a loading screen should be opened for, -1 if there is no minimum time. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Screens|Loading")
-		float MinimumLoadingScreenDisplayTime;
+	float MinimumLoadingScreenDisplayTime;
 
 	/** If true, the loading screen will disappear as soon as loading is done. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Screens|Loading")
-		bool bAutoCompleteWhenLoadingCompletes;
+	bool bAutoCompleteWhenLoadingCompletes;
 
 	/** If true, movies can be skipped by clicking the loading screen as long as loading is done. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Screens|Loading")
-		bool bMoviesAreSkippable;
+	bool bMoviesAreSkippable;
 
 	/** If true, movie playback continues until Stop is called. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Screens|Loading")
-		bool bWaitForManualStop;
+	bool bWaitForManualStop;
 
 	/** Should we just play back, loop, etc.  NOTE: if playback type is MT_LoadingLoop, then MoviePlayer will auto complete when in the last movie and load finishes regardless of bAutoCompleteWhenLoadingCompletes */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Screens|Movies")
-		TEnumAsByte<EMoviePlaybackType> PlaybackType;
+	TEnumAsByte<EMoviePlaybackType> PlaybackType;
 
 	/** The movie paths local to the game's Content/Movies/ directory without extension. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Screens|Movies")
-		TArray<FString> MoviePaths;
+	TArray<FString> MoviePaths;
 
 	/**  Should we show the throbber/loading text etc?  Generally you'll want to set this to false if you just want to show a movie. This will render over any movie/background image. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Screens|UI")
-		bool bShowUiOverlay;
+	bool bShowUiOverlay;
 
 	/** Flag for showing UI after all movies have been played successfully if true. False will show during movies. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Screens|UI", meta = (EditCondition = "bShowUIOverlay"))
-		bool bShowUiAfterMovies;
+	bool bShowUiAfterMovies;
 
 	/** Throbber to display when loading, can show circular and regular throbber types */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Screens|UI|Throbber", meta = (EditCondition = "bShowUIOverlay"))
-		FLoadingScreenThrobber Throbber;
+	FLoadingScreenThrobber Throbber;
 
 	/**  Text to display to indicate that the game is loading */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Screens|UI|Loading Text", meta = (EditCondition = "bShowUIOverlay"))
-		FLoadingScreenText LoadingScreenText;
+	FLoadingScreenText LoadingScreenText;
 
 	/**  Optional text to display as a description. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Screens|UI|Description", meta = (EditCondition = "bShowUIOverlay"))
@@ -267,15 +265,15 @@ public:
 
 	/** Flag for showing images after all movies have been played successfully if true. False will show during movies. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Screens|UI|Images")
-		bool bShowImagesAfterMovies;
+	bool bShowImagesAfterMovies;
 
 	/** The texture display while in the loading screen on top of the movie. Will render after and over any movies. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Screens|UI|Images", meta = (AllowedClasses = "Texture2D"))
-		TArray<FSoftObjectPath> Images;
+	TArray<FSoftObjectPath> Images;
 
 	/** The scaling type to apply to images. */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Screens|UI|Images")
-		TEnumAsByte<EStretch::Type> ImageStretch;
+	TEnumAsByte<EStretch::Type> ImageStretch;
 };
 
 /**
@@ -297,5 +295,4 @@ public:
 	/** The default load screen between maps. */
 	UPROPERTY(config, EditAnywhere, Category = "Screens")
 	FLoadingScreenDescription DefaultScreen;
-
 };
