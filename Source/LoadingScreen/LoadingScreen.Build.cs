@@ -8,7 +8,7 @@ public class LoadingScreen : ModuleRules
     public LoadingScreen(ReadOnlyTargetRules Target)
         : base(Target)
     {
-        PrivatePCHHeaderFile = "Public/ILoadingScreenModule.h";
+        PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
         PublicIncludePaths.Add(Path.Combine(ModuleDirectory, "Public"));
         PrivateIncludePaths.Add(Path.Combine(ModuleDirectory, "Private"));
