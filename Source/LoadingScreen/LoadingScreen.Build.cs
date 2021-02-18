@@ -21,7 +21,8 @@ public class LoadingScreen : ModuleRules
             "Slate",
             "SlateCore",
             "InputCore",
-            "Engine"
+            "Engine",
+            "DeveloperSettings"
         });
     }
 }
